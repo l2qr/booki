@@ -1,0 +1,62 @@
+body {
+    margin: 50px
+}
+
+h3 {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.accomodations {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 38px;
+}
+
+.accomodations--results {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 4.5% 45px;
+    gap: 22px;
+
+    width: calc(66% - 100px);
+    height: 625px;
+
+    background: #9b9b9b2d;
+    border-radius: 19px;
+}
+
+.accomodations--results-flexbox article {
+    width: 246px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.accomodations--results-flexbox {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 0px 0px 15px;
+    gap: 30px;
+    height: 445px;
+}
+
+.accomodations--recomendations {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 40px 45px;
+    gap: 22px;
+
+    width: calc(33% - 100px);
+    height: 625px;
+
+    background: #9b9b9b2d;
+    border-radius: 19px;
+}

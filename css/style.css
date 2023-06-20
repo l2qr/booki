@@ -587,6 +587,10 @@ footer a {
         flex-direction: column;
     }
 
+    .cards-flex {
+        gap: 13px;
+    }
+
     .card.vertical {
         flex-flow: column nowrap;
         flex: 1 1 100%;

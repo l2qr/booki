@@ -215,8 +215,7 @@
                     </article>
                     <article class="card horizontal">
                         <div class="image-wrapper">
-                            <img style="aspect-ratio: 1/1;"
-                                src="images\hebergements\4_small\febrian-zakaria-sjvU0THccQA-unsplash.jpg" alt="">
+                            <img src="images\hebergements\4_small\febrian-zakaria-sjvU0THccQA-unsplash.jpg" alt="">
                         </div>
                         <div class="info">
                             <h3>Tout bleu et Blanc Hotel</h3>
@@ -233,31 +232,39 @@
                 </div>
             </section>
         </div>
-        <section id="activities-in-marseille" class="activities">
-            <article class="card-activity">
-                <img src="images\activites\4_small\reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" alt="">
-                <h3>Old Port</h3>
-            </article>
-            <article class="card-activity">
-                <img src="images\activites\4_small\paul-hermann-QFTrLdQIRhI-unsplash.jpg" alt="">
-                <h3>Pomegues Fort</h3>
-            </article>
-            <article class="card-activity">
-                <img src="images\activites\4_small\kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="">
-                <h3>Frioul Island</h3>
-            </article>
-            <article class="card-activity">
-                <img src="images\activites\4_small\kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" alt="">
-                <h3>Calanques National Park</h3>
-            </article>
-            <article class="card-activity">
-                <img src="images\activites\4_small\florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="">
-                <h3>Notre-Dame-de-la-Garde</h3>
-            </article>
-            <article class="card-activity">
-                <img src="images\activites\4_small\lena-paulin-wH2-EJoDcV0-unsplash.jpg" alt="">
-                <h3>Longchamp Park</h3>
-            </article>
+        <section id="activities-in-marseille">
+            <h2>Activities in Marseille</h2>
+            <div class="activities">
+
+                <div class="activities-block">
+                    <article class="card-activity">
+                        <img src="images\activites\4_small\reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" alt="">
+                        <h3>Old Port</h3>
+                    </article>
+                    <article class="card-activity">
+                        <img src="images\activites\4_small\paul-hermann-QFTrLdQIRhI-unsplash.jpg" alt="">
+                        <h3>Pomegues Fort</h3>
+                    </article>
+                    <article class="card-activity">
+                        <img src="images\activites\4_small\kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="">
+                        <h3>Frioul Island</h3>
+                    </article>
+                </div>
+                <div class="activities-block">
+                    <article class="card-activity">
+                        <img src="images\activites\4_small\kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" alt="">
+                        <h3>Calanques National Park</h3>
+                    </article>
+                    <article class="card-activity">
+                        <img src="images\activites\4_small\florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="">
+                        <h3>Notre-Dame-de-la-Garde</h3>
+                    </article>
+                    <article class="card-activity">
+                        <img src="images\activites\4_small\lena-paulin-wH2-EJoDcV0-unsplash.jpg" alt="">
+                        <h3>Longchamp Park</h3>
+                    </article>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
@@ -279,5 +286,17 @@
         </ul>
     </footer>
 </body>
+
+<script>
+    let links = document.querySelectorAll('body > header > nav > div > a');
+    links.forEach(link => {
+        link.addEventListener('click', (event) => {
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        });
+    });
+</script>
 
 </html>

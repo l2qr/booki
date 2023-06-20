@@ -16,7 +16,11 @@ body {
 }
 
 body>* {
-    margin: 0 50px 50px;
+    padding: 0 50px;
+}
+
+main>* {
+    margin-bottom: 50px;
 }
 
 h1 {
@@ -46,13 +50,14 @@ i {
     color: #0065FC;
 }
 
-section {
-    margin-top: 30px;
-}
+/* section {
+    margin-bottom: 50px;
+} */
 
 /* ################################## */
 /* #######      HEADER        ####### */
 /* ################################## */
+
 header>nav {
     height: 100px;
     display: flex;
@@ -115,10 +120,19 @@ section.search {
     justify-content: space-evenly;
 }
 
+.search h1 {
+    margin-bottom: 0;
+}
+
+.search p {
+    margin-top: 12px;
+}
+
 .search--field {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: center;
+    justify-content: flex-start;
     height: var(--search-element-height);
 }
 
@@ -127,7 +141,7 @@ section.search {
 }
 
 .search--field--icon-wrapper {
-    width: 40px;
+    min-width: 40px;
     background-color: #F2F2F2;
     border-top-left-radius: var(--search-bar-border-radius);
     border-bottom-left-radius: var(--search-bar-border-radius);
@@ -170,13 +184,16 @@ section.search {
 }
 
 .search--filters {
-    width: 66%;
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
+.search--filters h3 {
+    margin-right: 20px;
+}
 
 .search--filters .filters--wrapper {
     box-sizing: border-box;
@@ -189,8 +206,8 @@ section.search {
     border: solid 2px #F2F2F2;
     border-radius: 25px;
     background-color: transparent;
-    padding: 0 15px 0 0;
-    margin: 0 10px;
+    padding: 0 12px 0 0;
+    margin: 5px 8px 5px 0;
 }
 
 .search--filters .filters--wrapper:hover {
@@ -223,10 +240,9 @@ section.search {
 }
 
 .search-info {
-    margin-top: 5px;
+    margin-top: 15px;
     display: flex;
     align-items: flex-start;
-    width: 33%;
 }
 
 .search-info i {
@@ -252,17 +268,16 @@ section.search {
 .accomodations-block {
     display: flex;
     height: fit-content;
-    flex-direction: row wrap;
-    padding: 0px;
-    margin: 30px 0 0;
-    gap: 2.5%;
+    flex-flow: row nowrap;
+    /* padding: 0px; */
+    gap: 40px;
 }
 
 .accomodations {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
-    padding: 3% 2% 3% 2.7%;
+    padding: 20px 30px;
     background: #F2F2F2;
     border-radius: 19px;
 }
@@ -272,13 +287,15 @@ section.search {
 }
 
 .accomodations.results {
-    min-width: 580px;
     justify-content: flex-start;
     flex: 21 0;
 }
 
+.accomodations.results h2 {
+    margin-left: 5px;
+}
+
 .accomodations.recomendations {
-    min-width: 300px;
     flex: 10 0;
     justify-content: flex-start;
 }
@@ -287,6 +304,7 @@ section.search {
     display: flex;
     align-content: flex-start;
     flex: 0 1;
+    gap: 5px;
 }
 
 .flex-row {
@@ -304,14 +322,15 @@ section.search {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 10px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     border-radius: 20px;
     padding: 4px;
-    margin: 5px 10px 5px 0;
+    margin: 2px;
 }
 
 
 .card.vertical {
     height: 220px;
     flex-flow: column nowrap;
-    flex: 1 1 220px;
+    flex: 1 1 calc(33% - 22px);
+    min-width: 200px;
 }
 
 .card.horizontal {
@@ -324,11 +343,11 @@ section.search {
     flex: 10 10;
     flex-flow: column nowrap;
     align-items: flex-start;
-    margin: 3%;
+    margin: 10px;
 }
 
 .card>div.info>h3 {
-    margin: 3% 0 2%;
+    margin: 0 0 5px;
 }
 
 .card>div.info>p {
@@ -336,7 +355,7 @@ section.search {
 }
 
 .rating {
-    margin: auto 0 2%;
+    margin: auto 0 0;
 }
 
 .card img {
@@ -361,71 +380,94 @@ section.search {
     border-top-right-radius: 15px;
 }
 
+.accomodations.recomendations>div>article:nth-child(3)>div.image-wrapper>img {
+    aspect-ratio: 1/1;
+}
+
+#more-link {
+    padding-top: 25px;
+    margin-top: auto;
+    margin-left: 5px;
+}
+
+/* ################################## */
+/* ####### ACTIVITIES SECTION ####### */
+/* ################################## */
+
 .activities {
     width: 100%;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     justify-content: space-between;
+    gap: 25px;
+}
+
+.activities-block {
     height: 500px;
-    gap: 2.5%;
+    display: flex;
+    flex: 1 1 calc(50% - 25px);
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 25px;
 }
 
 .activities h3 {
     font-size: 16;
     position: relative;
-    box-sizing: border-box;
     bottom: 0;
     transform: translate(0, -100%);
     background-color: white;
     display: block;
     width: 100%;
-    padding: 5% 8%;
+    padding: 15px 15px;
     margin: 0;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
 
-article.card-activity {
-    width: 23%;
+.card-activity {
+    width: calc(50% - 25px);
     background-color: white;
     box-shadow: 5px 5px 15px -3px rgba(0, 0, 0, 0.39);
-    border-radius: 15px;
-}
-
-article.card-activity>img {
-    height: 100%;
-    width: 100%;
     border: none;
     border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-activity>img {
+    height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
-article.card-activity:nth-child(1),
-article.card-activity:nth-child(4) {
+.activities-block>article:nth-child(1) {
     height: 100%;
 }
 
-article.card-activity:nth-child(2),
-article.card-activity:nth-child(6) {
-    height: 50%;
+.activities-block>article:nth-child(2) {
+    height: calc(55% - 20px);
 }
 
-article.card-activity:nth-child(3),
-article.card-activity:nth-child(5) {
-    height: 40%;
+.activities-block>article:nth-child(3) {
+    height: calc(45% - 20px);
 }
+
+/* ################################## */
+/* #######   ACTIVITIES END   ####### */
+/* ################################## */
+
+
 
 /* ################################## */
 /* #######      FOOTER        ####### */
 /* ################################## */
 
 footer {
-    box-sizing: border-box;
-    width: 100%;
     padding: 50px;
-    margin: 0 !important;
     display: flex;
     flex-flow: row wrap;
+    gap: 100px;
     align-items: flex-start;
     color: black;
     background-color: #F2F2F2;
@@ -439,12 +481,12 @@ footer h2 {
 
 footer ul {
     margin: 0;
-    padding: 0 12% 0 0;
+    padding: 0;
 }
 
 footer li {
     font-size: 14px;
-    margin: 0 0 3% 0;
+    margin: 0 0 10px 0;
     list-style: none;
 }
 
@@ -456,3 +498,135 @@ footer a {
 /* ################################## */
 /* #######    FOOTER END      ####### */
 /* ################################## */
+
+
+@media all and (min-width: 768px) and (max-width:991px) {
+    .accomodations-block {
+        flex-flow: column nowrap;
+    }
+
+    .activities {
+        flex-flow: column nowrap;
+        height: fit-content;
+    }
+
+    .activities-block {
+        height: 500px;
+        display: flex;
+        flex: 1 1 auto;
+    }
+
+    .card-activity {
+        width: calc(50% - 12.5px);
+    }
+}
+
+@media all and (max-width:767px) {
+    body>* {
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        margin: 20px 0;
+    }
+
+    main>* {
+        margin: 15px 0;
+        padding: 0 20px
+    }
+
+    header>nav {
+        height: fit-content;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo img {
+        left: 15px;
+    }
+
+    nav>div {
+        width: 100%;
+        align-items: flex-end;
+        justify-content: stretch;
+        height: fit-content;
+    }
+
+    nav a {
+        text-align: center;
+        flex: 1 0 50%;
+        margin: 0;
+        padding: 0 0 20px;
+    }
+
+    nav a.active {
+        border-width: 4px;
+        padding: 20px 0 20px;
+        border-style: none none solid;
+    }
+
+    nav a:hover {
+        color: #000000;
+        padding: 20px 0 24px;
+        background-color: #DEEBFF;
+        border-radius: 0;
+        transition: all 0.3s ease-out;
+    }
+
+    .search--filters h3 {
+        width: 100%;
+    }
+
+    .accomodations {
+        background-color: #ffffff;
+        border-radius: 0;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .card.vertical {
+        flex-flow: column nowrap;
+        flex: 1 1 100%;
+    }
+
+    .accomodations.recomendations {
+        background-color: #F2F2F2;
+        padding-bottom: 50px;
+    }
+
+    .accomodations-block {
+        padding: 0;
+        flex-flow: column-reverse nowrap;
+    }
+
+    .activities {
+        flex-flow: column nowrap;
+        height: fit-content;
+        margin-bottom: 40px
+    }
+
+    .activities-block {
+        display: flex;
+        flex-direction: column nowrap;
+        height: fit-content;
+    }
+
+    .card-activity {
+        width: 100%;
+        height: 220px !important;
+        overflow: hidden;
+    }
+
+    footer {
+        padding: 40px 20px;
+        display: flex;
+        gap: 50px;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        color: black;
+        background-color: #F2F2F2;
+    }
+}
